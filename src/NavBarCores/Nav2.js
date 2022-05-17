@@ -1,6 +1,7 @@
-import {Button, Navbar, ScrollArea, Text, useMantineTheme, Stack} from '@mantine/core';
+import {Button, Navbar, ScrollArea, Text, useMantineTheme, Stack, Menu} from '@mantine/core';
 import {Link, useHistory} from "react-router-dom";
 import {useState, useEffect, useContext, createContext} from "react";
+import {MathFunction} from "tabler-icons-react";
 
 
 
@@ -26,6 +27,15 @@ export const NavBar2Core = () => {
             <Navbar.Section mx="-xs" px="xs">
                 <Stack spacing="xs">
                     <Button style={{width:"100%", margin:"auto"}} variant="outline" onClick={()=>{history.push("/home")}}>Home</Button>
+                    <Menu control={<Button style={{width:"100%", margin:"auto"}} variant="outline">Content</Button>} position="right" transition="scale-x"
+                          transitionDuration={100}
+                          transitionTimingFunction="ease"
+                          placement="center">
+                        <Menu.Item style={{width:"100%", margin:"auto"}}
+                                   icon={<MathFunction size={24}/>} variant="outline" onClick={()=>{history.push("/graphs")}}>
+                            Graphs and Equations
+                        </Menu.Item>
+                    </Menu>
                     <Button style={{width:"100%"}} variant="outline" onClick={()=>{
                         setNavItems(navItemsNoLogin());
                         history.push("/login");
@@ -36,7 +46,7 @@ export const NavBar2Core = () => {
 
     }
 
-    const [navItems, setNavItems] = useState(navItemsNoLogin);
+    const [navItems, setNavItems] = useState(localStorage.getItem("LOGGED") === "true" ? navLoggedIn() : navItemsNoLogin());
     function handleUserLogin(e){
         setNavItems(navLoggedIn());
         console.log("logged in");
@@ -51,9 +61,11 @@ export const NavBar2Core = () => {
      */
 
     useEffect(() => {
+        window.removeEventListener('loggedIn', (e)=>handleUserLogin(e));
 
-    }, [navItemsNoLogin]);
-    window.addEventListener('storage', (e)=>handleUserLogin(e));
+        window.addEventListener('loggedIn', (e)=>handleUserLogin(e));
+
+    }, []);
 
     return(
         <Navbar height="100%" p="xs" padding="md" width={{sm: 200, lg: 300, base: 100}}>

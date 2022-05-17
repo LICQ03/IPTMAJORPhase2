@@ -22,6 +22,7 @@ import {
 import {NavBar2Core} from "./NavBarCores/Nav2";
 import {MoonStars, Sun} from "tabler-icons-react";
 import { MantineProvider, ColorSchemeProvider, Blockquote } from '@mantine/core';
+import {GraphsCore} from "./Cores/LoggedInCores/CONTENT/GraphsCore";
 
 const WelcomePage = () => {
     localStorage.clear();
@@ -81,6 +82,7 @@ function App() {
                     <Route exact path="/" component={WelcomePage} />
                     <Route path="/login" component={LoginCore}/>
                     <Route path="/home" component={LoggedHomeCore}/>
+                    <Route path="/graphs" component={GraphsCore}/>
                 </Switch>
             </AppShell>
         </MantineProvider>
