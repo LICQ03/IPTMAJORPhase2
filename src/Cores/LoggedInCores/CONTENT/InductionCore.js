@@ -4,6 +4,7 @@ export const InductionCore = () => {
             <h1>Induction Core</h1>
             <p>
                 This is the induction core.
+                d
             </p>
         </div>
     )
