@@ -14,9 +14,10 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
+
 export const GraphsCore = () => {
     const { classes } = useStyles();
-    //Chapters
+    //Chapters  
     const SignOfAFunction = () => {
         const [functionI, setFunctionI] = useState("y=(x+3)(x^2-1)");
         let contentsBounds = document.body.getBoundingClientRect();
@@ -51,7 +52,7 @@ export const GraphsCore = () => {
         return(
             <div>
                 <Title>The Sign Of A Function</Title>
-                <ScrollArea style={{ height: "75vh" }} type="always">
+                <ScrollArea style={{ height: "65vh" }} type="always">
                     <Space h={"xl"}/>
                     <Text>
                         The main purpose of this section is to review briefly the method of finding the sign of a function by using a
@@ -152,7 +153,7 @@ export const GraphsCore = () => {
             <div>
                 <Title>Vertical and Horizontal Asymptotes</Title>
                 <Space h={"xl"}/>
-                <ScrollArea style={{ height: "75vh" }} type="always">
+                <ScrollArea style={{ height: "65vh" }} type="always">
                     <Title order={3}>Vertical Asymptotes</Title>
                     <Text>
                         It is usually best to draw up a table of signs first so that the behaviour near any vertical asymptote can be
@@ -172,8 +173,35 @@ export const GraphsCore = () => {
                                 from the table of signs and described using the notation <inlineMath math="x → a^{+}"/> and <inlineMath math="x → a^{−}" />
                             </Text>
                         </Paper>
+                        <Space h={"xl"}/>
+                        Be careful. The function <InlineMath math="y=" /> <InlineMath math=" {x^{2} - 4} \over {x - 2}"/>
+                        is <InlineMath math="y = x + 2" />, for <InlineMath math="y = x ≠ 2" />. Its graph is the line <InlineMath math="y={x - 2}" />  with the
+                        point (2, 4) removed. There is a discontinuity at x = 2, but no asymptote there — the equation has a zero at
+                        x = 2 in the numerator as well as in the denominator.
 
-
+                        <Space h={"xl"}/>
+                        <Title order={3}>Horizontal asymptotes, and the behaviour as x → ∞ and as x → -∞</Title>
+                        <Space h={"xl"}/>
+                        It was very straightforward in the previous worked example to see that the x-axis is an asymptote to each
+                        curve. But it is not so straightforward to find the horizontal asymptotes, if indeed they exist, for curves such as
+                         <Space h={"xl"}/>
+                        <InlineMath math="y="/> <InlineMath math="{x - 1} \over {x - 4}" /> or <InlineMath math="y="/> <InlineMath math="{x - 1} \over {x^{2} - 4}" />
+                         <Space h={"xl"}/>
+                        Such curves are called rational functions because they are the ratio of two polynomials. For rational
+                        functions, dividing top and bottom by the highest power of x in the denominator makes the situation clear
+                        <Space h="xl" />
+                        <Paper shadow="md" p="md" m={3} radius="md" className={classes.defineNewEquation}>
+                            <Title order={5}>BEHAVIOUR FOR LARGE X</Title>
+                            <Text>
+                                Always factor the function first as far as possible.
+                                <List size="md" >
+                                    <List.Item>Divide top and bottom by the highest power of x in the denominator</List.Item>
+                                    <List.Item> Then use the fact that <InlineMath math="1 \over x"/> → 0 as x → ∞ and as x → −∞.</List.Item>
+                                </List>
+                                Once vertical asymptotes have been identified, the behaviour of the curve near them can then be seen
+                                from the table of signs and described using the notation <InlineMath math="x → a^{+}"/> and <inlineMath math="x → a^{−}" />
+                            </Text>
+                        </Paper>
                     </Text>
 
                 </ScrollArea>
@@ -200,4 +228,3 @@ export const GraphsCore = () => {
 
         </>)
 }
-
