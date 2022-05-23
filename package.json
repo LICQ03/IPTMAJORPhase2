@@ -19,7 +19,11 @@
     "react-router": "^6.3.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
+    "react-tsparticles": "^2.0.6",
     "tabler-icons-react": "^1.47.0",
+    "tsparticles": "^2.0.6",
+    "tsparticles-engine": "^2.0.6",
+    "tsparticles-preset-triangles": "^2.0.6",
     "url": "^0.11.0",
     "web-vitals": "^2.1.4"
   },

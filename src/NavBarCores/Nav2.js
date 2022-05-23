@@ -1,7 +1,7 @@
-import {Button, Navbar, ScrollArea, Text, useMantineTheme, Stack, Menu} from '@mantine/core';
+import {Button, Navbar, ScrollArea, Text, useMantineTheme, Stack, Menu, Divider} from '@mantine/core';
 import {Link, useHistory} from "react-router-dom";
 import {useState, useEffect, useContext, createContext} from "react";
-import {MathFunction} from "tabler-icons-react";
+import {ChartAreaLine, MathFunction, Math, QuestionMark} from "tabler-icons-react";
 
 
 
@@ -31,9 +31,24 @@ export const NavBar2Core = () => {
                           transitionDuration={100}
                           transitionTimingFunction="ease"
                           placement="center">
+                        <Menu.Label>Chapters</Menu.Label>
                         <Menu.Item style={{width:"100%", margin:"auto"}}
                                    icon={<MathFunction size={24}/>} variant="outline" onClick={()=>{history.push("/graphs")}}>
                             Graphs and Equations
+                        </Menu.Item>
+                        <Menu.Item style={{width:"100%", margin:"auto"}}
+                                   icon={<ChartAreaLine size={24}/>} variant="outline" onClick={()=>{history.push("/integration")}}>
+                            Integration
+                        </Menu.Item>
+                        <Menu.Item style={{width:"100%", margin:"auto"}}
+                                   icon={<Math size={24}/>} variant="outline" onClick={()=>{history.push("/induction")}}>
+                            Math Induction
+                        </Menu.Item>
+                        <Divider/>
+                        <Menu.Label>Resources</Menu.Label>
+                        <Menu.Item style={{width:"100%", margin:"auto"}}
+                               icon={<QuestionMark size={24}/>} variant="outline" onClick={()=>{history.push("/quiz")}}>
+                            Quiz
                         </Menu.Item>
                     </Menu>
                     <Button style={{width:"100%"}} variant="outline" onClick={()=>{

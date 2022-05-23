@@ -153,7 +153,7 @@ export const GraphsCore = () => {
             <div>
                 <Title>Vertical and Horizontal Asymptotes</Title>
                 <Space h={"xl"}/>
-                <ScrollArea style={{ height: "65vh" }} type="always">
+                <ScrollArea style={{ height: "60vh" }} type="always">
                     <Title order={3}>Vertical Asymptotes</Title>
                     <Text>
                         It is usually best to draw up a table of signs first so that the behaviour near any vertical asymptote can be
@@ -166,7 +166,7 @@ export const GraphsCore = () => {
 
                                     <List.Item>If the denominator has a zero at x = a, and the numerator is not zero at x = a, then the vertical
                                         line x = a is an asymptote.
-                                        </List.Item>
+                                    </List.Item>
                                     <List.Item>The choice between y → ∞ and y → −∞ can be made by looking at a table of signs</List.Item>
                                 </List>
                                 Once vertical asymptotes have been identified, the behaviour of the curve near them can then be seen
@@ -184,9 +184,9 @@ export const GraphsCore = () => {
                         <Space h={"xl"}/>
                         It was very straightforward in the previous worked example to see that the x-axis is an asymptote to each
                         curve. But it is not so straightforward to find the horizontal asymptotes, if indeed they exist, for curves such as
-                         <Space h={"xl"}/>
+                        <Space h={"xl"}/>
                         <InlineMath math="y="/> <InlineMath math="{x - 1} \over {x - 4}" /> or <InlineMath math="y="/> <InlineMath math="{x - 1} \over {x^{2} - 4}" />
-                         <Space h={"xl"}/>
+                        <Space h={"xl"}/>
                         Such curves are called rational functions because they are the ratio of two polynomials. For rational
                         functions, dividing top and bottom by the highest power of x in the denominator makes the situation clear
                         <Space h="xl" />
@@ -203,28 +203,157 @@ export const GraphsCore = () => {
                             </Text>
                         </Paper>
                     </Text>
-
                 </ScrollArea>
             </div>
         )
     }
-    const subFunctions = {
-        "SOF": {
-            name: "Sign of a function",
-            to: SignOfAFunction()
-        }
+    const CurveSketching = () => {
+        return(
+            <div>
+                <Title>A Curve-Sketching Menu</Title>
+                <Space h={"xl"}/>
+                <ScrollArea style={{ height: "60vh" }} type="always">
+                    <Text>
+                        We can now combine four approaches to curve-sketching into an informal four-step approach for sketching
+                        an unknown graph. This simple menu cannot possibly deal with every possible graph. Nevertheless, it will
+                        allow the main features of a surprising number of functions to be found.
+                        <Space h={"xl"}/>
+                        <Paper shadow="md" p="md" m={3} radius="md" className={classes.defineNewEquation}>
+                            <Title order={5}>SKETCHES</Title>
+                            <Text>
+                                Always factor the function first as far as possible.
+                                <List size="md" >
+                                    <List.Item>Divide top and bottom by the highest power of x in the denominator</List.Item>
+                                    <List.Item> Then use the fact that <InlineMath math="1 \over x"/> → 0 as x → ∞ and as x → −∞.</List.Item>
+                                </List>
+                                Once vertical asymptotes have been identified, the behaviour of the curve near them can then be seen
+                                from the table of signs and described using the notation <InlineMath math="x → a^{+}"/> and <inlineMath math="x → a^{−}" />
+                            </Text>
+                        </Paper>
+                        <Space h="xl"/>
+                        <Title order={3}>A curve-sketching menu</Title>
+                        Here is our informal four-step approach to sketching an unknown function
+
+                        <Paper shadow="md" p="md" m={3} radius="md" className={classes.defineNewEquation}>
+                            <Title order={5}>A CURVE SKETCHING MENU</Title>
+                            <Text>
+
+                                <List size="md" type="ordered">
+                                    <List.Item>Preparation: Combine any fractions using a common denominator, then factor top and bottom as
+                                        far as possible
+                                    </List.Item>
+                                    <List.Item>Domain: What is the domain? (Always do this first.)</List.Item>
+                                    <List.Item>Symmetry: Is the function odd, or even, or neither?</List.Item>
+                                    <List.Item><List withPadding listStyleType="disc" type="ordered">
+                                        <List.Item>Intercepts: What are the y-intercept and the x-intercepts (zeroes)?</List.Item>
+                                        <List.Item>Sign: Where is the function positive, and where is it negative?</List.Item>
+                                    </List> </List.Item>
+                                    <List.Item><List withPadding listStyleType="disc" type="ordered">
+                                        <List.Item>Vertical asymptotes: Examine the behaviour near any discontinuities, noting any vertical
+                                            asymptotes.</List.Item>
+                                        <List.Item>Horizontal asymptotes: Examine the behaviour of f (x) as x → ∞ and as x → −∞, noting
+                                            any horizontal asymptotes.
+                                        </List.Item>
+                                    </List> </List.Item>
+                                </List>
+                            </Text>
+                        </Paper>
+                        <Space h={"xl"}/>
+
+                        Finding the domain and finding the zeroes may both require factoring, which is the reason why the
+                        preparatory Step 0 is useful. Factoring, however, may not always be possible, even with the formula for the
+                        roots of a quadratic, and in such cases approximation methods may be useful.
+                        <Space h="xl"/>
+                        Questions will normally give guidance as to what is required. Our menu is not an explicit part of the course,
+                        but rather a suggested way to organise the approaches presented in the course.
+                    </Text>
+                </ScrollArea>
+            </div>
+        )
+    }
+    const SolvingInequations = () => {
+        return(
+            <div>
+                <Title>Solving Inequations</Title>
+                <Space h={"xl"}/>
+                <ScrollArea style={{ height: "60vh" }} type="always">
+                    <Text>
+                        We can now turn our attention to equations, and more importantly to inequations (or ‘inequalities’ as they
+                        are often called).
+                        <Space h={"xl"}/>
+                        <Title order={3}>The basic approaches to solving inequations</Title>
+                        <Paper shadow="md" p="md" m={3} radius="md" className={classes.defineNewEquation}>
+                            <Title order={5}>SOLVING INEQUATIONS — A BASIC SUMMARY</Title>
+                            <Text>
+                                <List size="md" >
+                                    <List.Item>
+                                        The graphical interpretation of an inequation f (x) {"< "} g(x) is, <Space h="xs"/>
+                                        ‘Where is the graph of y = g(x) above the graph of y = f (x) ?’</List.Item>
+                                    <List.Item>Anything can be added to or subtracted from both sides of an inequation</List.Item>
+                                    <List.Item>When multiplying or dividing both sides by a negative number, the inequality symbol is reversed</List.Item>
+                                    <List.Item>As with equations, never multiply or divide by 0.</List.Item>
+                                    <List.Item>A denominator can be removed by multiplying by its square, which is always positive or zero —
+                                        the zeroes then become special cases.</List.Item>
+                                    <List.Item>If the corresponding equation has been solved, and the discontinuities can be found, a table of
+                                        signs will solve the inequation</List.Item>
+                                </List>
+                            </Text>
+                        </Paper>
+                        <Space h="xl"/>
+
+                        We will now review how these six dotpoints apply to various types of inequations.
+                        <Space h="md"/>
+
+                        <strong>Linear inequations:</strong> Linear inequations can be solved completely by the second and third dotpoints, and this
+                        needs no further review. Three considerations:
+                        <List size="md">
+                            <List.Item>If the graph is drawn, then the first dotpoint can be used. </List.Item>
+                            <List.Item>If the equation has been solved, then a table of signs can be used.</List.Item>
+                            <List.Item>If the linear equation has unknown constants, such as ax > c, then division by a could be disastrous,
+                                because a could be negative or even zero.</List.Item>
+                        </List>
+                        <Space h="md"/>
+
+                        <strong>Quadratic and polynomial inequations:</strong> The standard method is to sketch the graph and read the solution
+                        off the graph. This was well covered in Year 11.
+                        If the polynomial can be factored, as for example (x − 2) (x − 5) {"<"} 0, then an algebraic argument using
+                        the signs of the two factors can be used, but this easily leads to confusion. In this case, the two factors must
+                        have opposite signs, so 2 {" < x < "} 5.
+                        <Space h="md"/>
+
+                        <strong>Inequations with a variable in the denominator: </strong> The standard approach is to multiply through by the
+                        denominator’s square, which is positive, so that we don’t generate cases depending on whether the inequality
+                        symbol is reversed.
+                        <List size="md">
+                            <List.Item>Keep expressions factored where possible — re-factoring may be difficult.</List.Item>
+                            <List.Item> If the denominator has zeroes, these must be treated as special cases.</List.Item>
+                        </List>
+                        The other approach, which is usually longer, is to sketch the graph and read the solution off the graph. The
+                        table of signs alone, however, may be sufficient.
+
+                    </Text>
+                </ScrollArea>
+            </div>
+    )
     }
 
+    const subFunctions = {
+            "SOF": {
+                name: "Sign of a function",
+                    to: SignOfAFunction()
+            }
+        }
+
     //const ref = useRef<MathView.MathViewRef>(null);
-    return(
-        <>
-            <Tabs>
-                <Tabs.Tab label="The sign of a function">{SignOfAFunction()}</Tabs.Tab>
-                <Tabs.Tab label="Vertical and horizontal asymptotes">{Asymptotes()}</Tabs.Tab>
-                <Tabs.Tab label="A curve-sketching menu">A curve-sketching menu</Tabs.Tab>
-                <Tabs.Tab label="Solving inequations">Solving inequations</Tabs.Tab>
-            </Tabs>
+            return(
+            <>
+                <Tabs>
+                    <Tabs.Tab label="The sign of a function">{SignOfAFunction()}</Tabs.Tab>
+                    <Tabs.Tab label="Vertical and horizontal asymptotes">{Asymptotes()}</Tabs.Tab>
+                    <Tabs.Tab label="A curve-sketching menu">{CurveSketching()}</Tabs.Tab>
+                    <Tabs.Tab label="Solving inequations">{SolvingInequations()}</Tabs.Tab>
+                </Tabs>
 
 
-        </>)
-}
+            </>)
+            }
