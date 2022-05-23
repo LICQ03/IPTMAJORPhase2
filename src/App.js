@@ -165,7 +165,7 @@ function App() {
                                 },
                                 repulse: {
                                     distance: 200,
-                                    duration: 0.4,
+                                    duration: 0.9,
                                 },
                             },
                         },
@@ -190,7 +190,7 @@ function App() {
                                     default: "bounce",
                                 },
                                 random: false,
-                                speed: 3,
+                                speed: 1,
                                 straight: false,
                             },
                             number: {
