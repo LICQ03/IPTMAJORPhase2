@@ -85,15 +85,45 @@ const GraphsQuestions = [
         Answered: false
     },
     {
-        Header: "d",
+        Header: <div>If {mathIt("f(x) = x + 3")} and { mathIt("g(x) = x^2")}, find {mathIt("f \\circ g (x)")}</div>,
         Answers: [
             {
-                text: "True",
+                text: <diV>{mathIt("x^2+4")}</diV>,
+                correct: false,
+            },
+            {
+                text: <diV>{mathIt("x^2+3")}</diV>,
                 correct: true,
             },
             {
-                text: "False",
+                text: <diV>{mathIt("x^3+4")}</diV>,
                 correct: false,
+            },
+            {
+                text: <diV>{mathIt("x^3+3")}</diV>,
+                correct: false,
+            },
+        ],
+        Answered: false
+    },
+    {
+        Header: <div>Find the horizontal asymptotes in, { mathIt("y={x^{2}-1 \\over x-4}")}</div>,
+        Answers: [
+            {
+                text: <diV>{mathIt("y=0")}</diV>,
+                correct: false,
+            },
+            {
+                text: <diV>{mathIt("y=1")}</diV>,
+                correct: false,
+            },
+            {
+                text: <diV>{mathIt("y=-1")}</diV>,
+                correct: false,
+            },
+            {
+                text: <diV>{mathIt("There are none")}</diV>,
+                correct: true,
             },
         ],
         Answered: false
@@ -176,23 +206,24 @@ export const QuizCore = () => {
                     {currentQuestions.map((question, index) => {
                         // var ButtonGradient = question.Answered ? { from: 'teal', to: 'lime', deg: 105 } : { from: 'orange', to: 'red' };
                         return(
-                            <Accordion.Item label={<Text size="lg" weight="bold">
+                            <Accordion.Item label={<Text size="md" weight="bold">
                                 {question.Header}
-                            </Text>} icon={<Avatar color={question.Answered ? "green":"orange"} size={80}>Q{index+1}</Avatar>}>
+                            </Text>} icon={<Avatar id={"$ID"+index} color={question.Answered ? "orange":"orange"} size={80}>Q{index+1}</Avatar>}>
                                 <RadioGroup label="Select your answer"
                                             description="NOTE: Use the canvas to draw up some working out"
                                             color="lime"
                                             required
                                             orientation="vertical"
-                                            >
 
-                                {question.Answers.map((answer, qNum) => {
-                                    console.log(answer.text);
-                                    //options.push(new NewRadio(answer, question.Header));
-                                    return(
-                                        <Radio label={answer.text} value={answer.text} />
-                                    )
-                                })}
+                                >
+
+                                    {question.Answers.map((answer, qNum) => {
+
+                                        options.push(new NewRadio(answer, question.Header));
+                                        return(
+                                            <Radio label={answer.text} id={'RID' + index} value={answer.text} />
+                                        )
+                                    })}
 
                                 </RadioGroup>
                             </Accordion.Item>
