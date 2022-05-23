@@ -122,7 +122,7 @@ const GraphsQuestions = [
                 correct: false,
             },
             {
-                text: <diV>{mathIt("There are none")}</diV>,
+                text: <diV>There are none</diV>,
                 correct: true,
             },
         ],
