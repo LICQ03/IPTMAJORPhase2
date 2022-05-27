@@ -1,7 +1,6 @@
 import {Accordion, Image, Tabs} from "@mantine/core";
 import ReactPlayer from "react-player";
 import {ChartArea, MathFunction} from "tabler-icons-react";
-import AudioPlayer from "react-h5-audio-player";
 const ResourceKeys = {
     GRAPHS: {
         VideoUrl: "https://www.youtube.com/watch?v=O3vRXeE-iBI",
