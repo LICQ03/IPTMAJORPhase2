@@ -1,7 +1,7 @@
 import {Button, Navbar, ScrollArea, Text, useMantineTheme, Stack, Menu, Divider} from '@mantine/core';
 import {Link, useHistory} from "react-router-dom";
 import {useState, useEffect, useContext, createContext} from "react";
-import {ChartAreaLine, MathFunction, Math, QuestionMark} from "tabler-icons-react";
+import {ChartAreaLine, MathFunction, Math, QuestionMark, Video} from "tabler-icons-react";
 
 
 
@@ -49,6 +49,10 @@ export const NavBar2Core = () => {
                         <Menu.Item style={{width:"100%", margin:"auto"}}
                                icon={<QuestionMark size={24}/>} variant="outline" onClick={()=>{history.push("/quiz")}}>
                             Quiz
+                        </Menu.Item>
+                        <Menu.Item style={{width:"100%", margin:"auto"}}
+                               icon={<Video size={24}/>} variant="outline" onClick={()=>{history.push("/video")}}>
+                            Extras
                         </Menu.Item>
                     </Menu>
                     <Button style={{width:"100%"}} variant="outline" onClick={()=>{

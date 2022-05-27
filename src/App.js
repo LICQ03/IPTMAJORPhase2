@@ -32,6 +32,7 @@ import {ErrorCore} from "./404Core";
 import {QuizCore} from "./Cores/LoggedInCores/CONTENT/QuizCore";
 import Particles from "react-tsparticles";
 import {loadFull} from "tsparticles";
+import {VideosCore} from "./Cores/LoggedInCores/CONTENT/VideosCore";
 
 const useStyles = createStyles((theme) => ({
     wrapper: {
@@ -281,6 +282,7 @@ function App() {
                     <Route path="/integration" component={IntegrationCore}/>
                     <Route path="/induction" component={InductionCore}/>
                     <Route path="/quiz" component={QuizCore}/>
+                    <Route path="/video" component={VideosCore}/>
 
                     <Route path="*" component={ErrorCore} />
 
