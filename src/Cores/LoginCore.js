@@ -29,7 +29,7 @@ export const LoginCore = () => {
     }
     function buttonClickSubmit(){
 
-        axios.post("https://ipt-api.herokuapp.com/users/loginIdentifier", userInputData).then(
+        axios.post("https://iptapimajor.herokuapp.com/users/loginIdentifier", userInputData).then(
             function (res){
                 if(res.data.completion) {
                     console.log("correct input")
