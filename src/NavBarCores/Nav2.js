@@ -65,7 +65,7 @@ export const NavBar2Core = () => {
 
     }
 
-    const [navItems, setNavItems] = useState(localStorage.getItem("LOGGED") !== "true" ? navLoggedIn() : navItemsNoLogin());
+    const [navItems, setNavItems] = useState(localStorage.getItem("LOGGED") === "true" ? navLoggedIn() : navItemsNoLogin());
     function handleUserLogin(e){
         setNavItems(navLoggedIn());
         console.log("logged in");
