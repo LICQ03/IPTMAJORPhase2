@@ -102,7 +102,7 @@ var allQuestions = [ {
 
 const GQ = {
     "quizTitle": "React Quiz Component Demo",
-    "quizSynopsis": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim",
+    "quizSynopsis": "Do you want to learn more about graphs? well here we are. This quiz will test your knowledge of graphs.",
     "nrOfQuestions": "4",
     "questions": [
         {
@@ -286,6 +286,10 @@ export const QuizCore = () => {
         height="65vh">
         <Quiz quiz={GraphsQuestions} shuffle={true}/>
             <Quiz quiz={IntegrationQuiz} shuffle={true}/>
+            <Text>
+                Please note: Math induction style questions are proving questions not solving so no test because that would
+                basically be impossible
+            </Text>
         </ScrollArea>
     )
 
