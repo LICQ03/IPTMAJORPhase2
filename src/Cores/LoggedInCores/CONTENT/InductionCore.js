@@ -149,7 +149,7 @@ export const InductionCore = () => {
         <>
             <Tabs>
                 <Tabs.Tab label="Using Mathematical Induction for Series">{InductionForSeries()}</Tabs.Tab>
-                <Tabs.Tab label="Vertical and Horizontal Asymptotes">{ProvingDivisibility()}</Tabs.Tab>
+                <Tabs.Tab label="Proving divisibility by mathematical induction">{ProvingDivisibility()}</Tabs.Tab>
             </Tabs>
         </>)
 }
