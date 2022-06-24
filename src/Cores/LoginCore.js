@@ -27,17 +27,23 @@ export const LoginCore = () => {
         })
         console.log(userInputData)
     }
+    const headers = {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET PATCH DELETE POST',
+        'Access-Control-Allow-Headers': 'origin, X-Requested-With,Content-Type,Accept, Authorization'
+    };
     function buttonClickSubmit(){
-
-        axios.post("https://iptapimajor.herokuapp.com/users/loginIdentifier", userInputData).then(
+        axios.post("http://localhost:5000/users", userInputData).then(
             function (res){
+                // set the CORS headers
+                //res.header('Access-Control-Allow-Headers', 'origin, X-Requested-With,Content-Type,Accept, Authorization');
                 if(res.data.completion) {
                     console.log("correct input")
                     window.localStorage.setItem("LOGGED", "true");
                     window.localStorage.setItem("USER", userInputData.username);
                     //window.dispatchEvent(new Event("storage"));
                     //NavBar2Core()
-
                     document.dispatchEvent(event);
 
                     history.push("/home")
