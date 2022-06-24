@@ -5,6 +5,8 @@ import {useState, useEffect} from "react";
 
 import {InlineMath, BlockMath} from "react-katex";
 import {Line} from "tabler-icons-react";
+import {useHistory} from "react-router-dom";
+import axios from "axios";
 //import {FunctionPlot} from "function-plot/dist/stories/FunctionPlot";
 //import {derivative} from 'mathjs';
 const useStyles = createStyles((theme) => ({
@@ -14,9 +16,35 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-
+const event = document.createEvent("CustomEvent");
+event.initCustomEvent("loggedIn", true, true);
 export const GraphsCore = () => {
+    const history = useHistory();
     const { classes } = useStyles();
+
+
+    //THIS CODE IS JUST FOR TESTING IN CASE DB GOES DOWN AND IN PRODUCTION ENVIRONMENT WILL BE REMOVED
+    if(localStorage.getItem("LOGGED") === "false"){
+        axios.post("http://localhost:5000/users", {username:"student1", password:"root"}).then(
+            function (res){
+                if(res.data.completion) {
+                    console.log("correct input")
+                    window.localStorage.setItem("LOGGED", "true");
+                    window.localStorage.setItem("USER", "student1");
+                    document.dispatchEvent(event);
+                    history.push("/home")
+                }
+                else{
+                    console.log("correct input")
+                    window.localStorage.setItem("LOGGED", "true");
+                    window.localStorage.setItem("USER", "student1");
+                    document.dispatchEvent(event);
+
+                    history.push("/home")
+                }
+
+            });
+    }
     //Chapters  
     const SignOfAFunction = () => {
         const [functionI, setFunctionI] = useState("y=(x+3)(x^2-1)");
@@ -49,6 +77,7 @@ export const GraphsCore = () => {
         useEffect(() => {
             functionPlot(options);
         }, [setFunctionI]);
+        //All the content of the chapter
         return(
             <div>
                 <Title>The Sign Of A Function</Title>

@@ -1,21 +1,27 @@
-import {Accordion, Image, Tabs} from "@mantine/core";
+import {Accordion, Image, List, Tabs, Text} from "@mantine/core";
 import ReactPlayer from "react-player";
-import {ChartArea, MathFunction} from "tabler-icons-react";
+import {Bible, ChartArea, MathFunction, SquareRoot} from "tabler-icons-react";
+import AudioCard from "audiocard";
+
+
+//The url's of the videos and podcasts for each topic
 const ResourceKeys = {
     GRAPHS: {
         VideoUrl: "https://www.youtube.com/watch?v=O3vRXeE-iBI",
-        PodUrl: "https://anchor.fm/breakingmathpodcast/episodes/61-Look-at-this-Graph--Graph-Theory-evl7cv/a-aiert9"
+        PodUrl: "https://api.spreaker.com/download/episode/49646688/8155aa5e3af16cf35343ee9797df5b38.mp3"
     },
     INTEGRATION: {
         VideoUrl: "https://www.youtube.com/watch?v=o75AqTInKDU",
-        PodUrl: "https://anchor.fm/breakingmathpodcast/episodes/12-Math-Factory-Algorithms-e2hqtd/a-aiert9"
+        PodUrl: "https://mcdn.podbean.com/mf/web/zjr76p/55audio.mp3"
+    },
+    MATHINDUCTION: {
+        VideoUrl: "https://youtu.be/dMn5w4_ztSw",
+        PodUrl: "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2021-10-26/a92f4eb7372ebeded3f7b0585b8e9946.m4a"
     }
 }
 
 
 export const VideosCore = () => {
-
-
     return(
         <div>
             <Tabs>
@@ -25,9 +31,14 @@ export const VideosCore = () => {
                             <ReactPlayer url={ResourceKeys.GRAPHS.VideoUrl}/>
                         </Accordion.Item>
                         <Accordion.Item label="Podcast">
-                            <iframe
-                                src={ResourceKeys.GRAPHS.PodUrl}
-                                height="102px" width="400px" frameBorder="0" scrolling="no"></iframe>
+                            <AudioCard
+                                title="Graphs and Equations Audio Podcast"
+                                art="data:image/png;base64,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"
+                                skipBackSeconds={10}
+                                skipForwardSeconds={10}
+                                source={ResourceKeys.GRAPHS.PodUrl}
+                            >
+                            </AudioCard>
                         </Accordion.Item>
                     </Accordion>
                 </Tabs.Tab>
@@ -37,12 +48,41 @@ export const VideosCore = () => {
                             <ReactPlayer url={ResourceKeys.INTEGRATION.VideoUrl}/>
                         </Accordion.Item>
                         <Accordion.Item label="Podcast">
-                            <ReactPlayer
-                                url={ResourceKeys.INTEGRATION.PodUrl}
+                            <AudioCard
+                                title="Integration Audio Podcast"
+                                art="data:image/png;base64,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"
+                                skipBackSeconds={10}
+                                skipForwardSeconds={10}
+                                source={ResourceKeys.INTEGRATION.PodUrl}
                                 >
-                            </ReactPlayer>
+                            </AudioCard>
                         </Accordion.Item>
                     </Accordion>
+                </Tabs.Tab>
+                <Tabs.Tab icon={<SquareRoot />} label="Mathematical Induction">
+                    <Accordion>
+                        <Accordion.Item label="Videos">
+                            <ReactPlayer url={ResourceKeys.MATHINDUCTION.VideoUrl}/>
+                        </Accordion.Item>
+                        <Accordion.Item label="Podcast">
+                            <Text>JUSTICE IS INTEGRATION!!!!</Text>
+                            <AudioCard
+                                title="Mathematical Induction"
+                                art="data:image/png;base64,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"
+                                skipBackSeconds={10}
+                                skipForwardSeconds={10}
+                                source={ResourceKeys.MATHINDUCTION.PodUrl}
+                                >
+                            </AudioCard>
+                        </Accordion.Item>
+                    </Accordion>
+                </Tabs.Tab>
+                <Tabs.Tab icon={<Bible />} label="Sources">
+                   <List>
+                       <List.Item>(All content from here) : <Text weight="bold">Pender, W., et al. CambridgeMATHS Stage 6. Year 12, Year 12,. 2020. </Text></List.Item>
+                       <List.Item>(DB from here) : <Text weight="bold">“Cloud Computing Services - Amazon Web Services (AWS).” Amazon Web Services, Inc., https://aws.amazon.com/. Accessed 24 June 2022.</Text></List.Item>
+
+                   </List>
                 </Tabs.Tab>
             </Tabs>
         </div>

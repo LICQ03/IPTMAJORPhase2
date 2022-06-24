@@ -1,13 +1,8 @@
-import {InlineMath} from "react-katex";
-function translate(raw){
-    return <InlineMath math={raw}/>
-}
-
-
+//The Graphs Questions object that links to the QuizCore file
 export const GraphsQuestions = {
     "quizTitle": "Graphs and Equations Quiz",
     "quizSynopsis": "This quiz will test your knowledge of graphs and equations. All content being tested is from the related content area for Graphs and Equations",
-    "nrOfQuestions": "4",
+    "nrOfQuestions": "6",
     "questions": [
         {
             "question": "What is the horizontal asymptote of the graph of (x^{2}-1)/(x-4)",
@@ -24,7 +19,7 @@ export const GraphsQuestions = {
             "messageForCorrectAnswer": "Correct answer. Good job.",
             "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
             "explanation": "D",
-            "point": "20"
+            "point": "1"
         },
         {
             "question": "If f(x) = x + 3 and g (x) = x^{2}, find f ○ g (x)",
@@ -40,7 +35,7 @@ export const GraphsQuestions = {
             "messageForCorrectAnswer": "Correct answer. Good job.",
             "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
             "explanation": "A",
-            "point": "20"
+            "point": "1"
         },
         {
             "question": "If f(x) = x + 3 and g (x) = x^{2}, find g ○ g (5)",
@@ -56,7 +51,7 @@ export const GraphsQuestions = {
             "messageForCorrectAnswer": "Correct answer. Good job.",
             "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
             "explanation": "C",
-            "point": "10"
+            "point": "1"
         },
         {
             "question": "What is the gradient for the line 4x^2 - 3 at x = 3?",
@@ -72,10 +67,44 @@ export const GraphsQuestions = {
             "messageForCorrectAnswer": "Correct answer. Good job.",
             "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
             "explanation": "DIFFERENTIATE IT U NUMPTY",
-            "point": "30"
+            "point": "1"
+        },
+        {
+            "question": "Differentiate x^2 + 3x^3 - 4",
+            "questionType": "text",
+            "answerSelectionType": "single",
+            "answers": [
+                "2x + 9x^2 + 2",
+                "3x^3 + 3x^2 + 2",
+                "2x + 9x^2",
+                "3x^3 + 9x^3 + 2",
+            ],
+            "correctAnswer": "3",
+            "messageForCorrectAnswer": "Correct answer. Good job.",
+            "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+            "explanation": "DIFFERENTIATE IT U NUMPTY",
+            "point": "1"
+        },
+        {
+            "question": "Differentiate x^3 + 3x^3 - 4",
+            "questionType": "text",
+            "answerSelectionType": "single",
+            "answers": [
+                "2x + 9x^2 + 2",
+                "3x^2 + 3x^2 + 2",
+                "12x^2",
+                "3x^3 + 9x^3 + 2",
+            ],
+            "correctAnswer": "3",
+            "messageForCorrectAnswer": "Correct answer. Good job.",
+            "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
+            "explanation": "DIFFERENTIATE IT U NUMPTY",
+            "point": "1"
         }
     ]
 }
+
+//The Integration questions object that links to the QuizCore file
 export const IntegrationQuiz = {
     "quizTitle": "Integration Quiz",
     "quizSynopsis": "This quiz will test your knowledge of Integration! All content being tested is from the related content area for Integration",
@@ -96,7 +125,7 @@ export const IntegrationQuiz = {
             "messageForCorrectAnswer": "Correct answer. Good job.",
             "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
             "explanation": "i bet i got u with it doesnt exist :)",
-            "point": "20"
+            "point": "1"
         },
         {
             "question": "The definite integral of ∫(x^2)dx with top limit x = 9 and bottom limit x = 0",
@@ -112,7 +141,7 @@ export const IntegrationQuiz = {
             "messageForCorrectAnswer": "Correct answer. Good job.",
             "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
             "explanation": "A",
-            "point": "20"
+            "point": "1"
         },
         {
             "question": "The definite integral of ∫(x^2)dx with top limit x = 0 and bottom limit x = 3",
@@ -128,7 +157,7 @@ export const IntegrationQuiz = {
             "messageForCorrectAnswer": "Correct answer. Good job.",
             "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
             "explanation": "The top limit in this example is bigger than the bottom limit. This is not possible. although it is technically, just deal with it i never mentioned this in the content this was based on so i tricked u :)",
-            "point": "10"
+            "point": "1"
         },
         {
             "question": "The indefinite integral of ∫(3x^2 + 2x + 2)dx",
@@ -144,7 +173,7 @@ export const IntegrationQuiz = {
             "messageForCorrectAnswer": "Correct answer. Good job.",
             "messageForIncorrectAnswer": "Incorrect answer. Please try again.",
             "explanation": ".",
-            "point": "30"
+            "point": "1"
         }
     ]
 }
